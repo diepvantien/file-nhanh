@@ -1,0 +1,198 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', monospace;
+    background-color: #ffffff;
+    color: #000000;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    border: 2px solid #000000;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 12px;
+}
+
+.section {
+    border: 2px solid #000000;
+    margin-bottom: 30px;
+    padding: 20px;
+}
+
+.section h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #000000;
+    padding-bottom: 10px;
+}
+
+.file-drop {
+    border: 2px dashed #000000;
+    padding: 40px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.file-drop:hover {
+    background-color: #f0f0f0;
+}
+
+.file-drop.dragover {
+    background-color: #e0e0e0;
+}
+
+.file-info {
+    border: 1px solid #000000;
+    padding: 15px;
+    margin: 15px 0;
+    background-color: #f9f9f9;
+}
+
+.share-options {
+    margin-top: 20px;
+}
+
+.share-options h3 {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.option {
+    margin-bottom: 15px;
+}
+
+.option label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+}
+
+.input-group input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #000000;
+    background-color: #ffffff;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+}
+
+.input-group input:focus {
+    outline: 2px solid #000000;
+    outline-offset: -1px;
+}
+
+button {
+    padding: 8px 16px;
+    border: 2px solid #000000;
+    background-color: #ffffff;
+    color: #000000;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+button:active {
+    background-color: #333333;
+}
+
+#qr-code {
+    border: 1px solid #000000;
+    margin-top: 10px;
+}
+
+.status {
+    border: 1px solid #000000;
+    padding: 15px;
+    margin-top: 20px;
+    background-color: #f9f9f9;
+}
+
+.progress-container {
+    margin-top: 15px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    border: 1px solid #000000;
+    background-color: #ffffff;
+    position: relative;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: #000000;
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+#file-offer {
+    border: 1px solid #000000;
+    padding: 15px;
+    margin: 15px 0;
+    background-color: #ffffff;
+}
+
+#file-offer button {
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+    
+    header h1 {
+        font-size: 20px;
+    }
+    
+    .input-group {
+        flex-direction: column;
+    }
+    
+    .input-group input,
+    .input-group button {
+        width: 100%;
+    }
+}

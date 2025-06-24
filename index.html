@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P2P File Share</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>P2P FILE SHARE</h1>
+            <p>Send files up to 10GB directly between devices</p>
+        </header>
+
+        <main>
+            <!-- Send File Section -->
+            <div class="section" id="send-section">
+                <h2>SEND FILE</h2>
+                <div class="file-drop" id="file-drop">
+                    <p>DROP FILE HERE OR CLICK TO SELECT</p>
+                    <input type="file" id="file-input" hidden>
+                </div>
+                
+                <div class="file-info" id="file-info" style="display: none;">
+                    <p id="file-name"></p>
+                    <p id="file-size"></p>
+                </div>
+
+                <div class="share-options" id="share-options" style="display: none;">
+                    <h3>SHARE OPTIONS</h3>
+                    <div class="option">
+                        <label>LINK:</label>
+                        <div class="input-group">
+                            <input type="text" id="share-link" readonly>
+                            <button onclick="copyLink()">COPY</button>
+                        </div>
+                    </div>
+                    <div class="option">
+                        <label>CODE:</label>
+                        <div class="input-group">
+                            <input type="text" id="share-code" readonly>
+                            <button onclick="copyCode()">COPY</button>
+                        </div>
+                    </div>
+                    <div class="option">
+                        <label>QR CODE:</label>
+                        <canvas id="qr-code"></canvas>
+                    </div>
+                </div>
+
+                <div class="status" id="send-status" style="display: none;">
+                    <p id="connection-status">WAITING FOR RECEIVER...</p>
+                    <div class="progress-container" id="upload-progress" style="display: none;">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="upload-fill"></div>
+                        </div>
+                        <p id="upload-speed">Upload: 0 MB/s</p>
+                        <p id="upload-percent">0%</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Receive File Section -->
+            <div class="section" id="receive-section">
+                <h2>RECEIVE FILE</h2>
+                <div class="input-group">
+                    <input type="text" id="receive-code" placeholder="ENTER CODE OR PASTE LINK">
+                    <button onclick="connectToSender()">CONNECT</button>
+                </div>
+
+                <div class="status" id="receive-status" style="display: none;">
+                    <p id="receive-connection-status">CONNECTING...</p>
+                    <div id="file-offer" style="display: none;">
+                        <p id="offered-file-name"></p>
+                        <p id="offered-file-size"></p>
+                        <button onclick="acceptFile()">ACCEPT</button>
+                        <button onclick="rejectFile()">REJECT</button>
+                    </div>
+                    <div class="progress-container" id="download-progress" style="display: none;">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="download-fill"></div>
+                        </div>
+                        <p id="download-speed">Download: 0 MB/s</p>
+                        <p id="download-percent">0%</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
